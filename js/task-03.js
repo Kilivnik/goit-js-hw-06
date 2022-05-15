@@ -12,3 +12,16 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const imageEl = document.querySelector(`.gallery`);
+
+const markup = images.map((image) => {
+  return `
+    <li>
+      <img src="${image.url}" alt="${image.alt}" width="150px" heigth="80px">
+    </li>
+  `
+}).join("");
+imageEl.insertAdjacentHTML(`afterbegin`, markup);
+imageEl.style.cssText = `display: grid;
+grid-template-columns: 300px 300px 300px`
